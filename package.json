@@ -24,8 +24,6 @@
     "color"
   ],
   "dependencies": {
-    "cli-define": "^0.5.44",
-    "cli-types": "^0.0.7",
     "ttycolor": "^0.8.13"
   },
   "devDependencies": {

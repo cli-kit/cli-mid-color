@@ -1,6 +1,3 @@
-var Flag = require('cli-define').Flag;
-var types = require('cli-types');
-
 /**
  *  Initialize ansi color support and add options
  *  that correspond to the ttycolor options.
@@ -52,10 +49,9 @@ module.exports = function(conf, name, description, stderr) {
   })
   //console.log('color middle final %s', name);
   //console.dir(name);
-  var opt = new Flag(
+  this.flag(
     name, description || 'enable or disable terminal colors',
     conf.validate ? types.enum(list) : null);
-  if(conf.validate) opt.value(ttycolor.parser.auto);
-  this.option(opt);
+  if(conf.validate) this.last().value(ttycolor.parser.auto);
   return this;
 }
