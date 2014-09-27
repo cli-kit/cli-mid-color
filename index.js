@@ -28,6 +28,8 @@ module.exports = function(conf, name, description, stderr) {
       break;
     }
   }
+  //console.log('color middle %s', name);
+  //console.dir(conf);
   //console.dir(conf);
   var ttycolor = require('ttycolor');
   var list = Object.keys(ttycolor.parser.modes);
@@ -48,6 +50,8 @@ module.exports = function(conf, name, description, stderr) {
     ttycolor.mode = (value === false)
       ? ttycolor.parser.never : ttycolor.parser.auto;
   })
+  //console.log('color middle final %s', name);
+  //console.dir(name);
   var opt = new Flag(
     name, description || 'enable or disable terminal colors',
     conf.validate ? types.enum(list) : null);
