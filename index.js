@@ -1,3 +1,5 @@
+var types = require('cli-types');
+
 /**
  *  Initialize ansi color support and add options
  *  that correspond to the ttycolor options.
