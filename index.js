@@ -1,4 +1,4 @@
-var types = require('cli-types');
+//var types = require('cli-types');
 
 /**
  *  Initialize ansi color support and add options
@@ -51,9 +51,15 @@ module.exports = function(conf, name, description, stderr) {
   })
   //console.log('color middle final %s', name);
   //console.dir(name);
+  //
+
+  //this.flag(
+    //name, description || 'enable or disable terminal colors',
+    //conf.validate ? types.enum(list) : null);
+  //if(conf.validate) this.last().value(ttycolor.parser.auto);
+
   this.flag(
-    name, description || 'enable or disable terminal colors',
-    conf.validate ? types.enum(list) : null);
-  if(conf.validate) this.last().value(ttycolor.parser.auto);
+    name, description || 'enable or disable terminal colors');
+  //if(conf.validate) this.last().value(ttycolor.parser.auto);
   return this;
 }
