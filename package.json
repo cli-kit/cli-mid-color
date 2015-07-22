@@ -24,12 +24,12 @@
     "color"
   ],
   "dependencies": {
-    "ttycolor": "^0.8.13"
+    "ttycolor": "~0.8.16"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "istanbul": "^0.3.2",
-    "mocha": "^1.21.4"
+    "chai": "~3.2.0",
+    "istanbul": "~0.3.17",
+    "mocha": "~2.2.5"
   },
   "engine": [
     "node >= 0.10.21"

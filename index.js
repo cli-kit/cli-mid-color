@@ -1,4 +1,16 @@
 //var types = require('cli-types');
+//
+var ttyref;
+
+Object.defineProperty(global, "ttycolor", {
+  set: function(value) {
+    console.dir('setting ttyref');
+    ttyref = value;
+  },
+  get: function() {
+    return ttyref;
+  }
+})
 
 /**
  *  Initialize ansi color support and add options
@@ -20,7 +32,8 @@
  */
 module.exports = function(conf, name, description, stderr) {
   conf = conf || {};
-  var serr = true;
+  var serr = true
+    , config = this.configure();
   for(var i = 1;i < arguments.length;i++) {
     if(typeof arguments[i] === 'boolean') {
       serr = arguments[i];
@@ -37,13 +50,17 @@ module.exports = function(conf, name, description, stderr) {
     //: ttycolor.parser.option.always;
   name = name || '--[no]-color';
   if(conf.defaults !== false) {
-    // disable options parser
-    ttycolor.revert = ttycolor(false, false).defaults(conf.styles, serr);
 
+    config.ttycolor = {};
+    // disable options parser
+    config.ttycolor.revert = ttycolor(false, false).defaults(conf.styles, serr);
+
+    // TODO: remove this and the defineProperty() statement
     // this is far from ideal but this is the only way
     // currently to allow the logger console stream to detect
     // whether ttycolor has been initialized
     global.ttycolor = ttycolor;
+
   }
   this.on('color', function oncolor(req, arg, value) {
     ttycolor.mode = (value === false)
