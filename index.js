@@ -4,7 +4,6 @@ var ttyref;
 
 Object.defineProperty(global, "ttycolor", {
   set: function(value) {
-    console.dir('setting ttyref');
     ttyref = value;
   },
   get: function() {
