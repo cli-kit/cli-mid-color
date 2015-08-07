@@ -2,14 +2,16 @@
 //
 var ttyref;
 
-Object.defineProperty(global, "ttycolor", {
-  set: function(value) {
-    ttyref = value;
-  },
-  get: function() {
-    return ttyref;
-  }
-})
+if(!global.hasOwnProperty('ttycolor')) {
+  Object.defineProperty(global, "ttycolor", {
+    set: function(value) {
+      ttyref = value;
+    },
+    get: function() {
+      return ttyref;
+    }
+  })
+}
 
 /**
  *  Initialize ansi color support and add options
