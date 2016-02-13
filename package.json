@@ -2,7 +2,8 @@
   "name": "cli-mid-color",
   "version": "1.0.10",
   "description": "Color option middleware",
-  "author": "muji <noop@xpm.io>",
+  "author": "muji",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/freeformsystems/cli-mid-color"
@@ -24,7 +25,7 @@
     "color"
   ],
   "dependencies": {
-    "ttycolor": "~0.8.16"
+    "ttycolor": "~1.0.0"
   },
   "devDependencies": {
     "chai": "~3.2.0",
