@@ -25,7 +25,7 @@
     "color"
   ],
   "dependencies": {
-    "ttycolor": "~1.0.0"
+    "ttycolor": "~1.1.0"
   },
   "devDependencies": {
     "chai": "~3.2.0",
